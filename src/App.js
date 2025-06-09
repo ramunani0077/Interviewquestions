@@ -12,6 +12,7 @@ function Stopwatch() {
 
   useEffect(() => {
     // Cache the time in local storage whenever it changes
+    // checking
     localStorage.setItem('stopwatch-time', time);
   }, [time]);
 
