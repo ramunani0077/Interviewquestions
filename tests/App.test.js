@@ -49,7 +49,7 @@ describe('Stopwatch Component', () => {
     });
     fireEvent.click(stopButton);
     expect(screen.getByText('0:00')).toBeInTheDocument();
-    expect(localStorage.getItem('stopwatch-time')).toBe('0');
+    expect(localStorage.getItem('stopwatch-time')).toBeNull();
   });
 
   test('testRetrieveCachedTimeOnLoad', () => {
@@ -59,7 +59,7 @@ describe('Stopwatch Component', () => {
   });
 
   test('testInvalidCachedTimeHandling', () => {
-    localStorage.setItem('stopwatch-time', '0');
+    localStorage.setItem('stopwatch-time', 'invalid');
     render(<Stopwatch />);
     expect(screen.getByText('0:00')).toBeInTheDocument();
   });
