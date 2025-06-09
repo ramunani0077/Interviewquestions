@@ -4,6 +4,7 @@ import './App.css'; // Import the CSS file
 function Stopwatch() {
   const [time, setTime] = useState(() => {
     // Retrieve cached time from local storage or initialize to 0
+    //testing code
     const savedTime = localStorage.getItem('stopwatch-time');
     return savedTime ? parseInt(savedTime, 10) : 0;
   });
